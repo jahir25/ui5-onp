@@ -24,8 +24,8 @@ sap.ui.define([
 
             onTestData: function () {
                 oModelApp.setProperty("/dNacimiento", new Date(1948, 11, 17))
-                oModelApp.setProperty("/dInitLabora", new Date(1963, 11, 20))
-                oModelApp.setProperty("/dCeseLabora", new Date(1984, 4, 1))
+                oModelApp.setProperty("/dInitLabora", new Date(1963, 3, 1))
+                oModelApp.setProperty("/dCeseLabora", new Date(1984, 10, 3))
                 oModelApp.setProperty("/dSolicitud", new Date(2021, 11, 20))
             },
 
@@ -47,8 +47,13 @@ sap.ui.define([
                 }
             },
 
-            obtenerAños: function (fechaNacimiento, fechaActual) {
-                let { años } = this.calcularBase(fechaNacimiento, fechaActual)
+            calcularAporte: function (fechaNacimiento, fechaActual) {
+                let { años, meses } = this.calcularBase(fechaNacimiento, fechaActual)
+                return `${años} años, ${meses} meses`;
+            },
+
+            obtenerAños: function(fechaNacimiento, fechaActual){
+                let { años} = this.calcularBase(fechaNacimiento, fechaActual)
                 return años;
             },
 
@@ -86,11 +91,11 @@ sap.ui.define([
                     dDevengado.setFullYear(dDevengado.getFullYear() - añosRestar);
                     oModelApp.setProperty("/dDevengado", dDevengado)
                 }
-                
+
 
                 //Calcular Años Aportados
-                oModelApp.setProperty("/iCantAños", this.obtenerAños(dNacimiento, dCeseLabora))
-                oModelApp.setProperty("/sStateAños", this.obtenerStateAños(this.obtenerAños(dNacimiento, dCeseLabora)))
+                oModelApp.setProperty("/sAporte", this.calcularAporte(dInitLabora, dCeseLabora))
+                oModelApp.setProperty("/sStateAños", this.obtenerStateAños(this.obtenerAños(dInitLabora, dCeseLabora)))
 
             }
         });

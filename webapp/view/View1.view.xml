@@ -86,9 +86,9 @@
                             </f:FormElement>
                             <f:FormElement label="Años de Aportes">
                                 <f:fields>
-                                    <ObjectNumber
+                                    <ObjectStatus
                                         inverted="true"
-                                        number="{modelApp>/iCantAños}"
+                                        text="{modelApp>/sAporte}"
                                         state="{modelApp>/sStateAños}" />
                                 </f:fields>
                             </f:FormElement>
