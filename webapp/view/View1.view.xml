@@ -1,0 +1,101 @@
+<mvc:View controllerName="ui5onp.com.pe.ui5onp.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m"
+    xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core">
+    <Page id="page" title="{i18n>title}">
+        <content>
+            <f:Form
+                class="sapUiResponsiveMargin"
+                editable="true">
+                <f:layout>
+                    <f:ResponsiveGridLayout
+                        labelSpanXL="3"
+                        labelSpanL="3"
+                        labelSpanM="3"
+                        labelSpanS="12"
+                        adjustLabelSpan="false"
+                        emptySpanXL="4"
+                        emptySpanL="4"
+                        emptySpanM="4"
+                        emptySpanS="0"
+                        columnsXL="2"
+                        columnsL="2"
+                        columnsM="2"
+                        singleContainerFullSize="false" />
+                </f:layout>
+                <f:toolbar>
+                    <Toolbar>
+                        <Title text="Pensión General"/>
+                        <ToolbarSpacer />
+                        <Button text="Calcular" press="onCalculateGeneral" icon="sap-icon://settings"/>
+                    </Toolbar>
+                </f:toolbar>
+                <f:formContainers>
+                    <f:FormContainer>
+                        <f:formElements>
+                            <f:FormElement label="Fecha de Nacimiento">
+                                <f:fields>
+                                    <DatePicker dateValue="{modelApp>/dNacimiento}" displayFormat="dd/MM/YYYY" />
+                                </f:fields>
+                            </f:FormElement>
+                            <f:FormElement label="Fecha de Inicio Laboral">
+                                <f:fields>
+                                    <DatePicker dateValue="{modelApp>/dInitLabora}" displayFormat="dd/MM/YYYY" />
+                                </f:fields>
+                            </f:FormElement>
+                            <f:FormElement label="Fecha de Cese Laboral">
+                                <f:fields>
+                                    <DatePicker dateValue="{modelApp>/dCeseLabora}" displayFormat="dd/MM/YYYY" />
+                                </f:fields>
+                            </f:FormElement>
+                            <f:FormElement label="Fecha Solicitud">
+                                <f:fields>
+                                    <DatePicker dateValue="{modelApp>/dSolicitud}" displayFormat="dd/MM/YYYY" />
+                                </f:fields>
+                            </f:FormElement>
+                            <f:FormElement label="Fecha Ley ">
+                                <f:fields>
+                                    <DatePicker dateValue="{modelApp>/dLeyGeneral}" displayFormat="dd/MM/YYYY" />
+                                </f:fields>
+                            </f:FormElement>
+                        </f:formElements>
+                    </f:FormContainer>
+                    <f:FormContainer>
+                        <f:formElements>
+                            <f:FormElement label="Fecha de Contingencia">
+                                <f:fields>
+                                    <DatePicker dateValue="{modelApp>/dContingencia}" editable="false" displayFormat="dd/MM/YYYY" />
+                                </f:fields>
+                            </f:FormElement>
+                            <f:FormElement label="Fecha de Devengado">
+                                <f:fields>
+                                    <DatePicker dateValue="{modelApp>/dDevengado}" editable="false" displayFormat="dd/MM/YYYY" />
+                                </f:fields>
+                            </f:FormElement>
+                            <f:FormElement label="Edad Solicitud">
+                                <f:fields>
+                                    <Input value="{modelApp>/sEdadSolicitud}" editable="false"/>
+                                </f:fields>
+                            </f:FormElement>
+                            <f:FormElement label="Edad Cese">
+                                <f:fields>
+                                    <Input value="{modelApp>/sEdadCese}" editable="false"/>
+                                </f:fields>
+                            </f:FormElement>
+                            <f:FormElement label="Años de Aportes">
+                                <f:fields>
+                                    <ObjectNumber
+                                        inverted="true"
+                                        number="{modelApp>/iCantAños}"
+                                        state="{modelApp>/sStateAños}" />
+                                </f:fields>
+                            </f:FormElement>
+                        </f:formElements>
+                    </f:FormContainer>
+                </f:formContainers>
+            </f:Form>
+        </content>
+    </Page>
+</mvc:View>
