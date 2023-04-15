@@ -57,7 +57,7 @@
                             </f:FormElement>
                             <f:FormElement label="Fecha Ley ">
                                 <f:fields>
-                                    <DatePicker dateValue="{modelApp>/dLeyGeneral}" displayFormat="dd/MM/YYYY" />
+                                    <DatePicker dateValue="{modelApp>/dLeyGeneral}" valueState="Warning" editable="false" displayFormat="dd/MM/YYYY" />
                                 </f:fields>
                             </f:FormElement>
                         </f:formElements>
