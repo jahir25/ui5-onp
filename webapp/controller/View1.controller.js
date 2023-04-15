@@ -86,6 +86,7 @@ sap.ui.define([
                     dDevengado.setFullYear(dDevengado.getFullYear() - añosRestar);
                     oModelApp.setProperty("/dDevengado", dDevengado)
                 }
+                
 
                 //Calcular Años Aportados
                 oModelApp.setProperty("/iCantAños", this.obtenerAños(dNacimiento, dCeseLabora))
